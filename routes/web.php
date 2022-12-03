@@ -14,3 +14,4 @@ use App\Http\Controllers\PostController;
 */
 // /に対してpostコントローラのインデックスメソッドを渡す
 Route::get('/', [PostController::class, 'index']);
+Route::get('/posts/{post}',[PostController::class, "show"]);

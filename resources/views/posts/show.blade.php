@@ -10,10 +10,11 @@
         <h1>Blog Name</h1>
         <div class='post'>
             <div>
-               
+                
                 <div class="content">
                     <h2 class="title">{{$post ->  title}}</h2>
                     <p class="body">{{$post -> body}}</p>
+                   <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                 </div>
             </div>     
         </div>

@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+       {{ Auth::user()->name }}
         <a href="/posts/create">create</a>
         <div class='posts'>
             @foreach ($posts as $post)
@@ -21,6 +22,7 @@
                     <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
                 </form>
                <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+               <small>{{ $post->user->name }}</small>
             @endforeach
         </div>
         <div class="paginate">

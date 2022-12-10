@@ -12,11 +12,12 @@
             <div>
                 
                 <div class="content">
+                    <p>作成者　{{ $post->user->name }}</p>
                     <h2 class="title">{{$post ->  title}}</h2>
                     <p class="body">{{$post -> body}}</p>
                    <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
                 </div>
-            </div>     
+            </div>    
         </div>
        <div class="edit">
            <a href="/posts/{{ $post->id }}/edit">edit</a>

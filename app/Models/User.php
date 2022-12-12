@@ -49,7 +49,7 @@ class User extends Authenticatable
     }
     public  function getOwnPagenateByLimit(int $limit_count = 5){
         return $this::with("posts")->find(Auth::id())->posts()->orderBy('updated_at', 'DESC')->paginate($limit_count);
-
+        
     }
 
 }

@@ -19,6 +19,27 @@
                 </div>
             </div>    
         </div>
+        <div class="comments">
+            <h1>コメント欄</h1>
+            @foreach($post->comment as $comment)
+                <p>{{$comment->body}}</p>
+            @endforeach
+        </div>
+         <form action="/posts/comments" method="POST">
+            @csrf
+             <input
+                    name="post_id"
+                    type="hidden"
+                    value="{{ $post->id }}"
+                >
+            <div class="comment">
+                <h2>コメント</h2>
+               <textarea name="comment[body]" placeholder="コメントを入力してください"></textarea>
+               
+            </div>
+            <input type="submit" value="送信"/>
+        </form>
+        
        <div class="edit">
            <a href="/posts/{{ $post->id }}/edit">edit</a>
            </div>
